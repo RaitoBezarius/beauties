@@ -1,15 +1,12 @@
 package main
 
 import (
-	"bufio"
 	"fmt"
 	"html/template"
 	"io"
 	"log"
-	"math/rand"
 	"mime"
 	"net/http"
-	"os"
 	"path/filepath"
 	"strings"
 
@@ -25,7 +22,6 @@ func registerHandlers(r *mux.Router) {
 	r.HandleFunc("/f", formHandler).Methods("GET")
 	r.HandleFunc("/gpg.asc", gpgHandler).Methods("GET")
 	r.HandleFunc("/ip", ipHandler).Methods("GET")
-	r.HandleFunc("/rword", rwordHandler).Methods("GET")
 	r.HandleFunc("/{filename}", putHandler).Methods("PUT")
 	r.HandleFunc("/{token}/{filename}", deleteHandler).Methods("DELETE")
 	r.HandleFunc("/{token}/{filename}", getHandler).Methods("GET")
