@@ -1,5 +1,6 @@
 *~
 .#*
+.direnv
 beauties
 cmd/beauties/beauties
 cmd/beauties/bindata.go
